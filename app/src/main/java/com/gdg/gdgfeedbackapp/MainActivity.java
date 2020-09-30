@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+    // Declared a Button and EditText widget
     Button submitBtn;
     EditText nameEdt;
 
@@ -25,11 +26,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        // Initializes those widgets
         nameEdt = (EditText) findViewById(R.id.nameedt);
         submitBtn = (Button)findViewById(R.id.submitbtn);
         submitBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                
+                // called the thankyouActivity class to open.
 
                 Intent i = new Intent(MainActivity.this,ThankyouActivity.class);
                 i.putExtra("name",nameEdt.getText().toString());
@@ -42,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // set action at floating action button
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
